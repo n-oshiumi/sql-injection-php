@@ -12,8 +12,8 @@ if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
     if (empty($_POST["email"]) || empty($_POST["password"])) {
         $message = "ユーザー名とパスワードを入力してください";
     } else {
-        $stmt = $pdo->prepare('SELECT * FROM users WHERE email=?');
-        $stmt->bindParam(1, $_POST['email'], PDO::PARAM_STR, 10);
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE email=:email');
+        $stmt->bindValue(":email", $_POST['email'], PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 

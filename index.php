@@ -12,8 +12,8 @@ try {
     require_once('./database.php');
 
     // 認証ユーザーを取得する
-    $stmt = $pdo->prepare('SELECT * FROM users WHERE email=?');
-    $stmt->bindParam(1, $_SESSION["login"], PDO::PARAM_STR, 10);
+    $stmt = $pdo->prepare('SELECT * FROM users WHERE email=:email');
+    $stmt->bindValue(":email", $_SESSION["login"], PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $userId = $result["id"];
