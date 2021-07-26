@@ -38,7 +38,7 @@ $message = htmlspecialchars($message);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>掲示板ログイン | SQLインジェクション脆弱性あり</title>
+    <title>マイメモ帳ログイン | SQLインジェクション脆弱性あり</title>
     <link rel="stylesheet" href="./css/destyle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -47,7 +47,7 @@ $message = htmlspecialchars($message);
         <nav class="navbar navbar-default bg-info">
         <div class="container-fluid justify-content-center">
             <div class="navbar-header">
-                <div class="navbar-brand text-white">SQLインジェクション体験ができる掲示板 - ログイン</div>
+                <div class="navbar-brand text-white">SQLインジェクション体験ができるマイメモ帳 - ログイン</div>
             </div>
         </div>
         </nav>
