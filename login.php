@@ -29,6 +29,7 @@ if ($_SERVER ['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+
 $message = htmlspecialchars($message);
 ?>
 <!DOCTYPE html>
