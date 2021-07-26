@@ -21,7 +21,8 @@ try {
     // 検索結果を取得する（何も検索していない場合は該当ユーザーのメモ全て）
     $searchText = isset($_GET["search"]) ? $_GET['search'] : null;
     $sql = " SELECT * FROM memos JOIN users ON users.id=memos.user_id WHERE user_id = $userId AND title LIKE '%" . $searchText . "%'"; //後で表示するようのSQL
-    $stmt = $pdo->prepare(" SELECT * FROM memos JOIN users ON users.id=memos.user_id WHERE user_id = $userId AND title LIKE '%" . $searchText . "%'");
+    $stmt = $pdo->prepare(" SELECT * FROM memos JOIN users ON users.id=memos.user_id WHERE user_id = $userId AND title LIKE :search");
+    $stmt->bindValue(":search", '%' . $searchText . '%', PDO::PARAM_STR);
 
     //実行する
     $res = $stmt->execute();
